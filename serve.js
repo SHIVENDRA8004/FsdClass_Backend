@@ -1,9 +1,16 @@
-let x=0;
+//================================ Counter Dillemma==============================
 
-function count(){
-    x++;
-}
-count();
-count();
-count();
-console.log(x);
+var result = (function (){
+    let x = 0;
+    function inner(){
+        x++;
+        return x;
+    }
+    return inner;
+})();
+
+result();
+result();
+console.log(result());
+
+// console.log(x);
